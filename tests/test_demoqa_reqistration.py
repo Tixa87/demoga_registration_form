@@ -26,12 +26,12 @@ def test_successful_fill_form(open_browser):
     browser.element('#state').click()
     browser.element('#react-select-3-input').type('NCR').press_enter()
     browser.element('#react-select-4-input').type('Delhi').press_enter()
-    browser.element('#submit').press_enter()
     browser.element('#uploadPicture').set_value(
         os.path.abspath(
             os.path.join(os.path.dirname(tests.__file__), 'resources/приветственное фото1.jpg')
         )
     )
+    browser.element('#submit').press_enter()
     browser.element('.table').all('td').even.should(
         have.exact_texts(
             'Alexandra Ilina',
